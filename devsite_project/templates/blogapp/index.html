@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+{% block title %} 
+<p>Photos</p>
+{% endblock %}
+
+{% block content %}
+   <!-- Photo Grid -->
+   {% if blogposts %}
+   <div class="row"> 
+    
+      
+    {% for blogpost in blogposts %}
+
+    <div class="column">
+
+    <h1 class="posttitle"> {{ blogpost.title }} </h1>
+    <p class="postinfo"> {{ blogpost.content }} </p>
+      <img src="{{ blogpost.photo.url }}" style="width:100%">
+
+    </div>
+
+    {% endfor %}
+      
+      
+  </div>
+    
+   {% else %}
+    <p>No Posts Yet.</p>
+
+   {% endif %}
+  
+{% endblock %}

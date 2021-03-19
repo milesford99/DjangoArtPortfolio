@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog app</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    
+
+
+</head>
+<body>
+    <div class="header">
+        <h1>MF Ultra</h1>
+        {% block title %} {% endblock%}
+      </div>
+      <div class="navbar">
+        <ul>
+          <li><a href="{% url 'index' %}">Photos</a></li>
+          <li><a href="{% url 'video' %}">Video</a></li>
+          <li><a href="{% url 'art' %}">Art</a></li>
+          <li><a href="{% url 'music' %}">Music</a></li>
+        </ul>
+      </div>
+    {% block content %} {% endblock %}
+</body>
+</html>
